@@ -4,6 +4,11 @@ import clsx from 'clsx';
 export default function InvoiceStatus({ status }: { status: string }) {
   return (
     <span
+    /*
+      #1-3. clsx 라이브러리를 통한 조건부 스타일링 적용 예시
+      status의 값이 pending, paid인지에 따라 다르게 적용
+      문법상 한계 때문에 라이브러리가 필요할 수 있음
+    */
       className={clsx(
         'inline-flex items-center rounded-full px-2 py-1 text-xs',
         {
