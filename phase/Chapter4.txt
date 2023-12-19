@@ -1,0 +1,10 @@
+# Chapter4. Creating Layouts and Pages
+
+Next.js에서는 각각의 폴더가 라우팅 세그먼트로 분류됨
+ex. acme.com/dashboard/invoices
+-> app/dashboard/invoices
+
+layout, page.tsx 파일을 사용하여 분리된 UI를 구성할 수 있음
+ui/page.tsx 파일은 루트 레이아웃(/) 경로와 관련 있음
+
+dashboard 경로(/dashboard)의 메인 페이지를 만들기 위해서는 dashboard/page.tsx를 생성하면 됨

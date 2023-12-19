@@ -1,0 +1,27 @@
+# Chapter5. Navigating between Pages
+대시보드 라우팅 간 사용자가 이동할 수 있도록 link 작성
+
+- #5-1. next/link 컴포넌트 사용법
+- #5-2. usePathname() 훅을 사용한 활성 링크 보여주는 방법
+- #5-3. Next.js에서 네비게이션의 동작 방식
+
+
+#5-1. next/link 컴포넌트(<Link />)
+<Link />를 사용할 경우 JS 기반의 client-side navigation를 사용하도록 동작함
+
+- 자동으로 코드 분리, prefetching(https://nextjs.org/learn/dashboard-app/navigating-between-pages#automatic-code-splitting-and-prefetching)
+Next.js에서는 네비게이션 경험을 향상시키기 위해 자동으로 애플리케이션 내 route segment별로 코드를 분리하는데,
+이는 React의 SPA처럼 브라우저가 초기 로딩 시 애플리케이션 코드를 모두 로딩하는 것과는 다른 방식임
+
+route 별로 코드를 분리한다는 것은 각 페이지들이 고립된다는 것을 의미함
+만약 특정 페이지에서 에러가 발생해도 나머지 페이지들은 여전히 동작할 수 있음
+
+게다가 운영 환경에서는 <Link > 컴포넌트가 브라우저의 뷰포트에 나타날 때마다
+Next.js는 백그라운드에서 자동으로 코드를 미리 가져옴
+사용자가 링크를 클릭할 때까지 목적 페이지의 코드는 백그라운드에서 미리 로딩되게 되기 때문에 페이지 라우팅이 빠르게 동작하는 원리
+- 자세한 정보(https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#how-routing-and-navigation-works)
+
+# 5-2. 활성 링크 보여주기
+일반적인 UI 패턴은 사용자에게 현재 어떤 페이지에 있는지 나타내는 활성 링크를 보여주는 것
+이 작업을 하기 위해서는 URL로부터 현재 경로(path)를 가져와야함
+-> usePathname() 훅을 사용하여 현재 경로를 확인할 수 있음
